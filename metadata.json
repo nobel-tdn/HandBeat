@@ -1,0 +1,7 @@
+{
+  "name": "HandBeat",
+  "description": "An immersive rhythm game that uses your webcam to track your hands. Hit the notes to the beat of the music in a futuristic 3D environment. Powered by React, Three.js, and MediaPipe.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HandBeat</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@700&family=Noto+Sans+JP:wght@400&family=Orbitron:wght@800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#68E1FD',
+              accent:  '#FF6B8A',
+              surface: '#0D0D1A',
+              'surface-alt': '#152238',
+              success: '#89FFB4',
+              warning: '#FFCD4F',
+              error:   '#FF5971',
+              'text-main': '#F7F9FA',
+              'text-sub':  '#B2C2D6',
+            },
+            boxShadow: {
+              depth: '0 4px 10px rgba(0,0,0,0.4)',
+              neon: '0 0 8px rgba(104,225,253,0.8), 0 0 12px rgba(255,107,138,0.6)',
+            },
+            fontFamily: {
+              title: ['Orbitron', 'sans-serif'],
+              heading: ['"M PLUS 1p"', 'sans-serif'],
+              body: ['"Noto Sans JP"', 'sans-serif'],
+            },
+            keyframes: {
+              pop: {
+                '0%': { transform: 'scale(0.5) translateY(0)', opacity: '0' },
+                '50%': { transform: 'scale(1.1) translateY(-20px)', opacity: '1' },
+                '100%': { transform: 'scale(1) translateY(-40px)', opacity: '0' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              pulse: {
+                '0%, 100%': { transform: 'scale(1)', opacity: '1' },
+                '50%': { transform: 'scale(1.05)', opacity: '0.9' },
+              }
+            },
+            animation: {
+              pop: 'pop 0.7s ease-out forwards',
+              fadeIn: 'fadeIn 0.5s ease-in-out',
+              pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+          },
+        },
+        plugins: [],
+      };
+    </script>
+
+    <!-- JS Libraries (ESM Modules) -->
+    <script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js",
+    "tone": "https://cdn.jsdelivr.net/npm/tone@15.0.4/build/Tone.js",
+    "@mediapipe/tasks-vision": "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/f/tasks-vision.js",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0"
+  }
+}
+</script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-surface text-text-main font-body">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+    
+    <!-- GitHub Pages SPA Redirect Script -->
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      // This script checks to see if a redirect is present in the query string,
+      // converts it back into the correct url and adds it to the
+      // browser's history using window.history.replaceState(...),
+      // which won't cause the browser to attempt to load the new url.
+      // When the single page app is loaded further down in this file,
+      // the correct url will be waiting in the browser's history for
+      // the single page app to route accordingly.
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+  </body>
+</html>
